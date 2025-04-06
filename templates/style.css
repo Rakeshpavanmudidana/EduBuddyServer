@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container, #innerDiv, #LessonViseDiv, #topicDiv{
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(6, 218, 218, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+
+#topicDiv{
+    background: linear-gradient(135deg, #16362a, #105870, #224757);
+    margin-top: 10px;   
+}
+
+#LessonViseDiv{
+    background: linear-gradient(135deg, #0f2027, #2233385d, #2c5364);
+}
+#popupContent{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 255, 255, 0.3);
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.select-selected {
+    background: #1b1b1b;
+    padding: 0;
+    border-radius: 8px;
+    border: 2px solid #00eaff;
+    color: #00eaff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.select-selected:hover {
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.select-selected.active {
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    border-bottom: none;
+}
+
+.select-input {
+    width: 100%;
+    padding: 12px 15px;
+    background: transparent;
+    border: none;
+    color: #00eaff;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+#password {
+    width: 100%;
+    padding: 12px 15px;
+    background: transparent;
+    border: none;
+    color: #00eaff;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.select-items {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    right: 0;
+    background: #1b1b1b;
+    border: 2px solid #00eaff;
+    border-top: none;
+    transition: rota;
+    border-radius: 0 0 8px 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    display: none;
+    box-shadow: 0 8px 20px rgba(0, 234, 255, 0.3);
+}
+
+.select-items.show {
+    display: block;
+    z-index: 100;
+}
+
+.select-items div {
+    padding: 12px 15px;
+    color: #00eaff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.select-items div:hover {
+    background: rgba(0, 234, 255, 0.15);
+    color: #ffffff;
+    transform: translateX(8px);
+}
+
+button {
+    background: linear-gradient(135deg, #ff00ff, #00eaff);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 14px 32px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.6);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+    display: absolute;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+}
+#topic{
+    color: #00eaff;
+    text-shadow: #027202;
+    font-weight: bolder;
+}
+#topicDiv:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 238, 255, 0.452);
+}
+
+button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 255, 234, 0.8);
+}
+
+#confirmBranchButton {
+    background: linear-gradient(135deg, #027202, #33e733);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 14px 32px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 204, 0, 0.6); 
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 6px 0;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+}
+
+#confirmBranchButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(102, 255, 102, 0.8); /* Lighter green shadow on hover */
+}
+
+#ClassDetailsDiv:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(161, 89, 209, 0.8); /* Lighter green shadow on hover */
+    font-weight: bold;
+
+}
+
+h5{
+    color:aqua;
+}
+
+#dropdownContainer2 {
+    display: block;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 14px 15px;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 6px 0;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+}
+
+.loading-popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+#generateSyllabus, #tocancleOptions{
+    position: block;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.loading-content {
+    background: #1b1b1b;
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 255, 234, 0.8);
+    min-width: 200px;
+}
+
+.spinner {
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid #00eaff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 15px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .custom-select {
+        max-width: 100%;
+    }
+
+    button {
+        padding: 12px 25px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #confirmBranchButton {
+        padding: 12px 25px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .loading-content {
+        padding: 20px;
+    }
+}
+
+
+#ClassDetailsDiv{
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(6, 218, 218, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#innerDiv:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(161, 89, 209, 0.8); /* Lighter green shadow on hover */
+    font-weight: bold;
+
+}
+
+#innerDiv{
+    align-items: center;
+    margin-top: 20px;
+}
+
+p{
+    text-align: center;
+    color: rgba(129, 202, 11, 0.767);
+}
+
+/* Style for h3 */
+h3 {
+    color: rgb(10, 224, 240);
+    margin: 0 0 10px 0; /* Margin only below to separate from hr */
+    padding: 0; /* No padding */
+}
+
+/* Style for hr */
+hr {
+    width: 100%; /* Full width */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle line */
+    margin: 0 0 10px 0; /* Margin below for spacing */
+}
+
