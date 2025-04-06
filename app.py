@@ -3,7 +3,7 @@ import google.generativeai as genai
 from flask_cors import CORS
 import os
 
-GOOGLE_API_KEY = "AIzaSyAL9McXITz1dXMlKbT0ZqaxH5jgSQJDg1M"
+GOOGLE_API_KEY = "AIzaSyCnUjBX9A0r_ZttZO5A79ETvdRur-eSQXU"
 genai.configure(api_key=GOOGLE_API_KEY)
 
 model = genai.GenerativeModel("gemini-1.5-flash")
